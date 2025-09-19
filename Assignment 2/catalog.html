@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vallejo Public Library · Catalog</title>
+  <style>
+:root { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; line-height: 1.5; }
+* { box-sizing: border-box; } body { margin: 0; color: #111; background: #fff; }
+header, nav, main, footer { padding: 1rem; max-width: 1024px; margin: 0 auto; }
+nav ul { display: flex; gap: 1rem; list-style: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; }
+th, td { border-bottom: 1px solid #eee; padding: .5rem .6rem; text-align: left; }
+caption { position: absolute; left: -9999px; }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Catalog</h1>
+  <nav aria-label="Primary">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="catalog.html" aria-current="page">Catalog</a></li>
+      <li><a href="book.html">Sample Book</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <p>Complete catalog (public-domain-era demo titles). Select a book to see details and place a hold.</p>
+
+  <table aria-describedby="catalog-desc">
+    <caption id="catalog-desc">Book catalog with stock and available copies</caption>
+    <thead>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Author</th>
+        <th scope="col">Year</th>
+        <th scope="col">ISBN</th>
+        <th scope="col">In Stock</th>
+        <th scope="col">Available</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="book.html?book=bk-gatsby" aria-label="View details for The Great Gatsby">The Great Gatsby</a></td>
+        <td>F. Scott Fitzgerald</td>
+        <td>1925</td>
+        <td>N/A</td>
+        <td>7</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td><a href="book.html?book=bk-sunalso" aria-label="View details for The Sun Also Rises">The Sun Also Rises</a></td>
+        <td>Ernest Hemingway</td>
+        <td>1926</td>
+        <td>N/A</td>
+        <td>5</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td><a href="book.html?book=bk-lighthouse" aria-label="View details for To the Lighthouse">To the Lighthouse</a></td>
+        <td>Virginia Woolf</td>
+        <td>1927</td>
+        <td>N/A</td>
+        <td>6</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><a href="book.html?book=bk-soundfury" aria-label="View details for The Sound and the Fury">The Sound and the Fury</a></td>
+        <td>William Faulkner</td>
+        <td>1929</td>
+        <td>N/A</td>
+        <td>4</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td><a href="book.html?book=bk-passing" aria-label="View details for Passing">Passing</a></td>
+        <td>Nella Larsen</td>
+        <td>1929</td>
+        <td>N/A</td>
+        <td>3</td>
+        <td>0</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <details style="margin-top:1rem;">
+    <summary>Image policy note</summary>
+    <p><small>No copyrighted images are embedded. Any covers on detail pages are inline SVG mock placeholders.
+    If you later use real covers, choose public-domain sources (pre-1930 in the U.S. as of 2025) and add a
+    source note in <code>&lt;figcaption&gt;</code>.</small></p>
+  </details>
+</main>
+
+<footer>
+  <p>&copy; 2025 Vallejo Public Library</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vallejo Public Library · Book</title>
+  <style>
+:root { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; line-height: 1.5; }
+* { box-sizing: border-box; } body { margin: 0; color: #111; background: #fff; }
+header, nav, main, footer { padding: 1rem; max-width: 1024px; margin: 0 auto; }
+nav ul { display: flex; gap: 1rem; list-style: none; padding: 0; }
+figure { display: grid; grid-template-columns: 140px 1fr; gap: 1rem; align-items: center; }
+dl { display: grid; grid-template-columns: 160px 1fr; gap: .25rem 1rem; }
+dt { font-weight: 600; }
+fieldset { border: 1px solid #ddd; border-radius: 10px; padding: 1rem; }
+label { display: block; margin-top: .5rem; }
+input, select, button { font: inherit; padding: .55rem .6rem; border: 1px solid #ccc; border-radius: 10px; width: 100%; }
+button { width: auto; cursor: pointer; }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Book Details</h1>
+  <nav aria-label="Primary">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="catalog.html">Catalog</a></li>
+      <li><a href="book.html" aria-current="page">Sample Book</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <article itemscope itemtype="https://schema.org/Book">
+    <header>
+      <h2 itemprop="name">The Great Gatsby</h2>
+      <p>by <span itemprop="author">F. Scott Fitzgerald</span> · 
+         <time datetime="1925" itemprop="datePublished">1925</time></p>
+      <p><small>ISBN: <span itemprop="isbn">N/A</span></small></p>
+    </header>
+
+    <figure>
+      <div aria-hidden="true">
+        <svg aria-hidden="true" width="140" height="200" viewBox="0 0 140 200" xmlns="http://www.w3.org/2000/svg">
+          <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#e8f5e9"/><stop offset="1" stop-color="#c8e6c9"/>
+          </linearGradient></defs>
+          <rect x="0" y="0" width="140" height="200" rx="10" fill="url(#g)" stroke="#95d5b2"/>
+          <rect x="12" y="18" width="116" height="120" rx="6" fill="#fff" stroke="#b7e4c7"/>
+          <text x="70" y="70" text-anchor="middle" font-size="12" fill="#2b8a3e">The Great Gatsby</text>
+          <text x="70" y="92" text-anchor="middle" font-size="10" fill="#2b8a3e">F. Scott Fitzgerald</text>
+          <text x="70" y="180" text-anchor="middle" font-size="9" fill="#2b8a3e">Public-domain-era demo</text>
+        </svg>
+      </div>
+      <figcaption>
+        <strong>Cover:</strong> mock placeholder (no copyrighted image). If you use a real public-domain cover later,
+        cite the source here.
+      </figcaption>
+    </figure>
+
+    <section aria-labelledby="syn">
+      <h3 id="syn">Synopsis</h3>
+      <p itemprop="description">A Jazz Age portrait of ambition and illusion as Nick Carraway watches Jay Gatsby chase an idealized love against the glittering, fragile world of Long Island elites.</p>
+    </section>
+
+    <section aria-labelledby="inv">
+      <h3 id="inv">Inventory</h3>
+      <dl>
+        <dt>Total copies</dt><dd>7</dd>
+        <dt>Available now</dt><dd>3</dd>
+      </dl>
+    </section>
+
+    <section aria-labelledby="hold">
+      <h3 id="hold">Place a Hold</h3>
+      <p>Holds are available to current cardholders. We will reserve a copy for pickup when available.</p>
+      <form method="post" action="#confirm">
+        <fieldset>
+          <legend>Hold request</legend>
+          <label for="card-number">Library card number *</label>
+          <input id="card-number" name="card-number" required inputmode="numeric" placeholder="e.g., 1234567890">
+
+          <label for="pickup">Pickup location</label>
+          <select id="pickup" name="pickup">
+            <option>Main Desk</option>
+            <option>Children's Room</option>
+            <option>Drive-up Window</option>
+          </select>
+        </fieldset>
+        <button type="submit">Request Hold</button>
+        <p id="confirm"><small>Demo only — no data is sent.</small></p>
+      </form>
+    </section>
+  </article>
+
+  <p><a href="catalog.html">← Back to catalog</a></p>
+</main>
+
+<footer>
+  <p>&copy; 2025 Vallejo Public Library</p>
+</footer>
+</body>
+</html>

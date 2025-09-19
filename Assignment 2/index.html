@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vallejo Public Library · Home</title>
+  <meta name="description" content="Vallejo Public Library — hours, location, catalog, news, and services." />
+  <style>
+:root { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; line-height: 1.5; }
+* { box-sizing: border-box; }
+body { margin: 0; color: #111; background: #fff; }
+header, nav, main, footer { padding: 1rem; max-width: 1024px; margin: 0 auto; }
+nav ul { display: flex; gap: 1rem; list-style: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; }
+th, td { border-bottom: 1px solid #eee; padding: .5rem .6rem; text-align: left; }
+caption { position: absolute; left: -9999px; }
+fieldset { border: 1px solid #ddd; border-radius: 10px; padding: 1rem; }
+label { display: block; margin-top: .5rem; }
+input, select, textarea, button { font: inherit; padding: .55rem .6rem; border: 1px solid #ccc; border-radius: 10px; width: 100%; }
+button { width: auto; cursor: pointer; }
+address { font-style: normal; }
+small { color: #475; }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Vallejo Public Library</h1>
+  <nav aria-label="Primary">
+    <ul>
+      <li><a href="index.html" aria-current="page">Home</a></li>
+      <li><a href="catalog.html">Catalog</a></li>
+      <li><a href="book.html">Sample Book</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section aria-labelledby="addr-hours">
+    <h2 id="addr-hours">Address &amp; Hours</h2>
+    <article>
+      <h3>Address</h3>
+      <address>
+        505 Santa Clara Street, Vallejo, CA 94590<br>
+        Email: <a href="mailto:info@vallejolibrary.example">info@vallejolibrary.example</a><br>
+        Phone: <a href="tel:+18665727587">1-866-572-7587</a>
+      </address>
+    </article>
+
+    <article>
+      <h3>Opening Hours</h3>
+      <table aria-describedby="hours-caption">
+        <caption id="hours-caption">Regular weekly opening hours</caption>
+        <thead>
+          <tr><th scope="col">Day</th><th scope="col">Hours</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Mon</th><td>09:00–20:00</td></tr>
+          <tr><th scope="row">Tue</th><td>09:00–20:00</td></tr>
+          <tr><th scope="row">Wed</th><td>09:00–20:00</td></tr>
+          <tr><th scope="row">Thu</th><td>09:00–20:00</td></tr>
+          <tr><th scope="row">Fri</th><td>09:00–17:00</td></tr>
+          <tr><th scope="row">Sat</th><td>09:00–17:00</td></tr>
+          <tr><th scope="row">Sun</th><td>Closed</td></tr>
+        </tbody>
+      </table>
+    </article>
+  </section>
+
+  <section aria-labelledby="card">
+    <h2 id="card">Get a Library Card</h2>
+    <form method="post" action="#thanks">
+      <fieldset>
+        <legend>Applicant information</legend>
+        <label for="full-name">Full name *</label>
+        <input id="full-name" name="full-name" required>
+
+        <label for="email">Email *</label>
+        <input id="email" type="email" name="email" required>
+
+        <label for="address">Mailing address *</label>
+        <textarea id="address" name="address" rows="3" required></textarea>
+
+        <label for="id-type">ID type</label>
+        <select id="id-type" name="id-type">
+          <option>Driver license</option>
+          <option>State ID</option>
+          <option>Passport</option>
+        </select>
+      </fieldset>
+      <button type="submit">Submit request</button>
+      <p id="thanks"><small>Demo only — no data is sent.</small></p>
+    </form>
+  </section>
+
+  <section aria-labelledby="news">
+    <h2 id="news">Latest News</h2>
+    <article>
+      <h3>Storytime Saturdays return</h3>
+      <p><time datetime="2025-09-18">Sep 18, 2025</time> — Weekly storytime at 11am.</p>
+    </article>
+    <article>
+      <h3>Friends of the Library Book Sale</h3>
+      <p><time datetime="2025-09-11">Sep 11, 2025</time> — Gently used books, 10am–4pm.</p>
+    </article>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 Vallejo Public Library</p>
+  <nav aria-label="Footer">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="catalog.html">Catalog</a></li>
+      <li><a href="book.html">Sample Book</a></li>
+    </ul>
+  </nav>
+</footer>
+</body>
+</html>
