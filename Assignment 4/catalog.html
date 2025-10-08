@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vallejo Public Library · Catalog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@900;700;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="container site-top">
+    <div class="brand"><a href="index.html">Vallejo Public Library</a></div>
+    <nav class="primary" aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="catalog.html" aria-current="page">Catalog</a></li>
+        <li><a href="book.html">Sample Book</a></li>
+      </ul>
+    </nav>
+    <form class="search" role="search" aria-label="Site search" action="catalog.html" method="get">
+      <input type="search" name="q" placeholder="Search the catalog…" value="">
+      <button type="submit">Search</button>
+    </form>
+  </div>
+</header>
+
+<main id="main" class="container">
+  <div class="catalog-grid" aria-label="Book catalog cards">
+    <article class="catalog-card">
+      <h3><a href="book.html?book=bk-gatsby" aria-label="View details for The Great Gatsby">The Great Gatsby</a></h3>
+      <p class="meta">F. Scott Fitzgerald · 1925 · ISBN: N/A</p>
+      <p class="meta">In stock: 7 · Available: 3</p>
+    </article>
+    <article class="catalog-card">
+      <h3><a href="book.html?book=bk-sunalso" aria-label="View details for The Sun Also Rises">The Sun Also Rises</a></h3>
+      <p class="meta">Ernest Hemingway · 1926 · ISBN: N/A</p>
+      <p class="meta">In stock: 5 · Available: 2</p>
+    </article>
+    <article class="catalog-card">
+      <h3><a href="book.html?book=bk-lighthouse" aria-label="View details for To the Lighthouse">To the Lighthouse</a></h3>
+      <p class="meta">Virginia Woolf · 1927 · ISBN: N/A</p>
+      <p class="meta">In stock: 6 · Available: 4</p>
+    </article>
+    <article class="catalog-card">
+      <h3><a href="book.html?book=bk-soundfury" aria-label="View details for The Sound and the Fury">The Sound and the Fury</a></h3>
+      <p class="meta">William Faulkner · 1929 · ISBN: N/A</p>
+      <p class="meta">In stock: 4 · Available: 1</p>
+    </article>
+    <article class="catalog-card">
+      <h3><a href="book.html?book=bk-passing" aria-label="View details for Passing">Passing</a></h3>
+      <p class="meta">Nella Larsen · 1929 · ISBN: N/A</p>
+      <p class="meta">In stock: 3 · Available: 0</p>
+    </article>
+  </div>
+
+  <div class="table-wrap" style="margin-top: var(--s6)">
+    <table aria-describedby="catalog-desc">
+      <caption id="catalog-desc">Book catalog with stock and available copies</caption>
+      <thead>
+        <tr>
+          <th scope="col">Title</th>
+          <th scope="col">Author</th>
+          <th scope="col">Year</th>
+          <th scope="col">ISBN</th>
+          <th scope="col">In Stock</th>
+          <th scope="col">Available</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="book.html?book=bk-gatsby">The Great Gatsby</a></td>
+          <td>F. Scott Fitzgerald</td>
+          <td>1925</td>
+          <td>N/A</td>
+          <td>7</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td><a href="book.html?book=bk-sunalso">The Sun Also Rises</a></td>
+          <td>Ernest Hemingway</td>
+          <td>1926</td>
+          <td>N/A</td>
+          <td>5</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td><a href="book.html?book=bk-lighthouse">To the Lighthouse</a></td>
+          <td>Virginia Woolf</td>
+          <td>1927</td>
+          <td>N/A</td>
+          <td>6</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td><a href="book.html?book=bk-soundfury">The Sound and the Fury</a></td>
+          <td>William Faulkner</td>
+          <td>1929</td>
+          <td>N/A</td>
+          <td>4</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td><a href="book.html?book=bk-passing">Passing</a></td>
+          <td>Nella Larsen</td>
+          <td>1929</td>
+          <td>N/A</td>
+          <td>3</td>
+          <td>0</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="container footgrid">
+    <p>© 2025 Vallejo Public Library</p>
+    <nav aria-label="Footer">
+      <ul style="display:flex;gap:.75rem;list-style:none;margin:0;padding:0">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="catalog.html" aria-current="page">Catalog</a></li>
+        <li><a href="book.html">Sample Book</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

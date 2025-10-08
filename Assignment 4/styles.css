@@ -1,0 +1,187 @@
+
+/* ===============================
+   Vallejo Public Library (Rebuild)
+   - Mobile-first
+   - 12-column alignment on tablet/desktop
+   - Stronger framing + generous spacing
+   =============================== */
+
+:root{
+  /* Typography */
+  --font-head: "Merriweather", Georgia, "Times New Roman", Times, serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+
+  /* Palette */
+  --blue: #0B3D91;         /* Primary */
+  --green: #2A8C68;        /* Accent */
+  --bg: #F7F7F8;           /* Page background */
+  --text: #0f172a;         /* Slate-900 */
+  --muted: #D0D7E2;        /* Border color (thick frames) */
+  --muted-strong: #B8C2D2; /* Heavier border for emphasis */
+  --table-head: #EEF3F9;
+
+  /* Radii & layout */
+  --radius: 14px;
+  --container: 1200px;
+
+  /* Spacing scale */
+  --s1: 0.5rem;   /* 8px  */
+  --s2: 0.75rem;  /* 12px */
+  --s3: 1rem;     /* 16px */
+  --s4: 1.25rem;  /* 20px */
+  --s5: 1.5rem;   /* 24px */
+  --s6: 2rem;     /* 32px */
+  --s7: 2.5rem;   /* 40px */
+  --s8: 3rem;     /* 48px */
+
+  /* Grid gutters (grow with viewport) */
+  --gutter: clamp(1rem, 2.5vw, 2rem);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; font-family:var(--font-body); color:var(--text);
+  line-height:1.65; background:var(--bg);
+}
+img{max-width:100%; height:auto; display:block}
+a{color:var(--blue); text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* Containers */
+.container{max-width:var(--container); margin-inline:auto; padding:var(--s5) var(--s5)}
+
+/* Header */
+header.site{
+  background:#fff; border-bottom:2px solid var(--muted);
+  position:sticky; top:0; z-index:20;
+}
+.site-top{display:grid; grid-template-columns:1fr auto; align-items:center; gap:var(--s4) var(--s6)}
+.brand{font-family:var(--font-head); font-weight:900}
+nav.primary ul{list-style:none; display:flex; gap:var(--s3); margin:0; padding:0}
+nav.primary a{padding:.45rem .7rem; border-radius:10px}
+nav.primary a[aria-current="page"]{background:var(--blue); color:#fff}
+
+/* Search (always visible) */
+.search{display:flex; gap:var(--s3); width:100%}
+.search input[type="search"]{
+  flex:1; border:2px solid var(--muted); border-radius:999px; padding:.9rem 1.1rem;
+  background:#fff;
+}
+.search button{
+  border:2px solid var(--blue); background:var(--blue); color:#fff;
+  border-radius:999px; padding:.9rem 1.1rem; cursor:pointer;
+}
+
+/* Cards / Frames */
+.card{
+  background:#fff; border:2px solid var(--muted); border-radius:var(--radius);
+  padding:var(--s6);
+  box-shadow:0 2px 6px rgba(2,6,23,.05);
+}
+
+/* Headings */
+h1,h2,h3{font-family:var(--font-head); line-height:1.25}
+h1{font-size:clamp(1.5rem, 2.2vw, 2.1rem); margin:.2rem 0 var(--s3)}
+h2{font-size:clamp(1.25rem, 2vw, 1.6rem); margin:0 0 var(--s3)}
+h3{font-size:clamp(1.1rem, 1.8vw, 1.25rem); margin:0 0 .35rem}
+
+/* Semantic helpers */
+.table-wrap{overflow-x:auto}
+caption{position:absolute; left:-9999px}
+dl{margin:0}
+dt{font-weight:700}
+
+/* 12-col alignment (tablet/desktop) */
+.home-grid{display:grid; gap:var(--gutter)}
+@media (min-width:640px){ .home-grid{grid-template-columns:repeat(12, 1fr)} }
+
+/* Homepage blocks */
+.home-hours{}
+.home-card{}
+.home-news{}
+
+@media (min-width:640px){
+  .home-hours{grid-column:1 / span 7}      /* 7/12 */
+  .home-card{grid-column:8 / span 5}       /* 5/12 */
+  .home-news{grid-column:1 / -1}           /* full width */
+}
+
+/* Emphasize Latest News: thicker border + extra padding */
+.home-news{border-width:3px; border-color:var(--muted-strong); padding:var(--s7)}
+
+/* Tables */
+table{
+  width:100%; border-collapse:collapse; background:#fff;
+  border:2px solid var(--muted); border-radius:var(--radius); overflow:hidden;
+}
+th, td{padding:.7rem .9rem; border-bottom:1px solid #E5EBF3; text-align:left}
+thead th{background:var(--table-head); font-weight:800}
+
+/* Book page: section cards for each area */
+.section-card{
+  background:#fff; border:2px solid var(--muted); border-radius:var(--radius);
+  padding:var(--s6); margin-block:var(--s6);
+}
+.book-figure{display:grid; grid-template-columns:120px 1fr; gap:var(--s5); align-items:center}
+.book-figure svg{width:120px; height:170px}
+.book-inventory dl{display:grid; grid-template-columns:180px 1fr; gap:.35rem var(--s4)}
+
+/* Catalog */
+.catalog-grid{display:grid; gap:var(--gutter)}
+@media (min-width:640px){ .catalog-grid{grid-template-columns:repeat(2, minmax(0,1fr))} }
+@media (min-width:1024px){ .catalog-grid{grid-template-columns:repeat(3, minmax(0,1fr))} }
+.catalog-card{background:#fff; border:2px solid var(--muted); border-radius:var(--radius); padding:var(--s5)}
+.catalog-card h3{margin:.2rem 0 .4rem}
+
+/* Footer */
+footer.site{border-top:2px solid var(--muted); background:#fff; margin-top:var(--s7); padding:var(--s5) 0}
+footer.site .footgrid{display:flex; gap:var(--s4); flex-wrap:wrap; justify-content:space-between; align-items:center}
+
+/* Skip link */
+.skip-link{position:absolute; top:-40px; left:0; background:#000; color:#fff; padding:.5rem .75rem; z-index:100}
+.skip-link:focus{top:0}
+
+
+/* === Patch: Applicant information form layout (single-column, clean spacing) === */
+.home-card fieldset{
+  border: none;            /* remove nested border */
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1rem;               /* even gap between fields */
+}
+
+.home-card label{
+  display: block;
+  font-weight: 600;
+  margin-bottom: .25rem;
+}
+
+.home-card input,
+.home-card select,
+.home-card textarea{
+  display: block;
+  width: 100%;
+  border: 1.5px solid var(--muted);
+  border-radius: var(--radius);
+  padding: .65rem .85rem;
+  font: inherit;
+  background: #fff;
+}
+
+.home-card textarea{
+  resize: vertical;
+  min-height: 5.5rem;
+}
+
+.home-card button{
+  margin-top: .5rem;
+  background: var(--blue);
+  color: #fff;
+  border: none;
+  padding: .85rem 1.2rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+.home-card button:hover{ filter: brightness(.95); }

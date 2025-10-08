@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vallejo Public Library · Book</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@900;700;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="container site-top">
+    <div class="brand"><a href="index.html">Vallejo Public Library</a></div>
+    <nav class="primary" aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="catalog.html">Catalog</a></li>
+        <li><a href="book.html" aria-current="page">Sample Book</a></li>
+      </ul>
+    </nav>
+    <form class="search" role="search" aria-label="Site search" action="catalog.html" method="get">
+      <input type="search" name="q" placeholder="Search the catalog…" />
+      <button type="submit">Search</button>
+    </form>
+  </div>
+</header>
+
+<main id="main" class="container">
+  <article itemscope itemtype="https://schema.org/Book">
+    <header class="section-card">
+      <h1 itemprop="name">The Great Gatsby</h1>
+      <p>by <span itemprop="author">F. Scott Fitzgerald</span> · 
+         <time datetime="1925" itemprop="datePublished">1925</time></p>
+      <p><small>ISBN: <span itemprop="isbn">N/A</span></small></p>
+      <figure class="book-figure">
+        <div aria-hidden="true">
+          <svg aria-hidden="true" viewBox="0 0 140 200" xmlns="http://www.w3.org/2000/svg">
+            <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#e8f5e9"/><stop offset="1" stop-color="#c8e6c9"/>
+            </linearGradient></defs>
+            <rect x="0" y="0" width="140" height="200" rx="10" fill="url(#g)" stroke="#95d5b2"/>
+            <rect x="12" y="18" width="116" height="120" rx="6" fill="#fff" stroke="#b7e4c7"/>
+            <text x="70" y="70" text-anchor="middle" font-size="12" fill="#2b8a3e">The Great Gatsby</text>
+            <text x="70" y="92" text-anchor="middle" font-size="10" fill="#2b8a3e">F. Scott Fitzgerald</text>
+            <text x="70" y="180" text-anchor="middle" font-size="9" fill="#2b8a3e">Public-domain-era demo</text>
+          </svg>
+        </div>
+        <figcaption>
+          <strong>Cover:</strong> mock placeholder. For real covers, use public-domain sources (pre-1930 in the U.S. as of 2025)
+          and include source credit here.
+        </figcaption>
+      </figure>
+    </header>
+
+    <section class="section-card" aria-labelledby="syn">
+      <h2 id="syn">Synopsis</h2>
+      <p itemprop="description">A Jazz Age portrait of ambition and illusion as Nick Carraway watches Jay Gatsby chase an idealized love against the glittering, fragile world of Long Island elites.</p>
+    </section>
+
+    <section class="section-card book-inventory" aria-labelledby="inv">
+      <h2 id="inv">Inventory</h2>
+      <dl>
+        <dt>Total copies</dt><dd>7</dd>
+        <dt>Available now</dt><dd>3</dd>
+      </dl>
+    </section>
+
+    <section class="section-card" aria-labelledby="hold">
+      <h2 id="hold">Place a Hold</h2>
+      <p>Holds are available to current cardholders. We will reserve a copy for pickup when available.</p>
+      <form method="post" action="#confirm">
+        <fieldset>
+          <legend>Hold request</legend>
+          <label for="card-number">Library card number *</label>
+          <input id="card-number" name="card-number" required inputmode="numeric" placeholder="e.g., 1234567890">
+
+          <label for="pickup">Pickup location</label>
+          <select id="pickup" name="pickup">
+            <option>Main Desk</option>
+            <option>Children's Room</option>
+            <option>Drive-up Window</option>
+          </select>
+        </fieldset>
+        <button type="submit">Request Hold</button>
+        <p id="confirm"><small class="muted">Demo only — no data is sent.</small></p>
+      </form>
+    </section>
+  </article>
+
+  <p><a href="catalog.html">← Back to catalog</a></p>
+</main>
+
+<footer class="site">
+  <div class="container footgrid">
+    <p>© 2025 Vallejo Public Library</p>
+    <nav aria-label="Footer">
+      <ul style="display:flex;gap:.75rem;list-style:none;margin:0;padding:0">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="catalog.html">Catalog</a></li>
+        <li><a href="book.html" aria-current="page">Sample Book</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>
