@@ -71,21 +71,23 @@
     <section class="card home-card" aria-labelledby="card">
       <h2 id="card">Get a Library Card</h2>
       <form method="post" action="#thanks">
-        <fieldset>
-          <legend>Applicant information</legend>
-          <label for="full-name">Full name *</label>
-          <input id="full-name" name="full-name" required>
-          <label for="email">Email *</label>
-          <input id="email" type="email" name="email" required>
-          <label for="address">Mailing address *</label>
-          <textarea id="address" name="address" rows="3" required></textarea>
-          <label for="id-type">ID type</label>
-          <select id="id-type" name="id-type">
-            <option>Driver license</option>
-            <option>State ID</option>
-            <option>Passport</option>
-          </select>
-        </fieldset>
+        <!-- Removed <fieldset> per instructor feedback; form itself controls layout & spacing -->
+        <label for="full-name">Full name *</label>
+        <input id="full-name" name="full-name" autocomplete="name" required>
+
+        <label for="email">Email *</label>
+        <input id="email" type="email" name="email" autocomplete="email" required>
+
+        <label for="address">Mailing address *</label>
+        <textarea id="address" name="address" rows="3" autocomplete="street-address" required></textarea>
+
+        <label for="id-type">ID type</label>
+        <select id="id-type" name="id-type" autocomplete="off">
+          <option>Driver license</option>
+          <option>State ID</option>
+          <option>Passport</option>
+        </select>
+
         <button type="submit">Submit request</button>
         <p id="thanks"><small class="muted">Demo only — no data is sent.</small></p>
       </form>
