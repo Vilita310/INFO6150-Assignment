@@ -205,3 +205,50 @@ footer nav a{ font-size:1.6rem; }
 
 /* ---------------- Utility ---------------- */
 .muted{ color:#6b7a89; }
+
+
+/* =========================================
+   Feedback 2 – spacing & book form
+   ========================================= */
+.section-card form{
+  display: grid;
+  gap: var(--s3);
+  margin-top: var(--s3);
+}
+.section-card input,
+.section-card select{
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid var(--muted);
+  border-radius: calc(var(--radius) + 2px);
+  padding: var(--s3) var(--s4);
+  font-size: 1.6rem;
+  line-height: 1.4;
+  background: #fff;
+}
+.section-card button{
+  align-self: start;
+  background: var(--blue);
+  color: #fff;
+  border: none;
+  border-radius: calc(var(--radius) + 2px);
+  padding: var(--s3) var(--s4);
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.section-card input:focus,
+.section-card select:focus{
+  border-color: var(--blue);
+  outline: none;
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--blue), transparent 75%);
+}
+main.container:has(.home-grid),
+main.container:has(.catalog-grid){
+  padding-top: var(--s6);
+}
+.home-hours > h2,
+.home-card  > h2{
+  margin-top: 0;
+}
+.home-hours > h2 + *{ margin-top: var(--s2); }
+.home-card  > h2 + *{ margin-top: var(--s2); }
