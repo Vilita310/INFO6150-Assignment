@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Assignment 5: Registration (Minimal)</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header><h1>Register to Get a Pizza</h1></header>
+  <main>
+    <section>
+      <h2>Registration</h2>
+      <ul id="errors"></ul>
+      <form id="signup-form">
+        <div class="field">
+          <label for="name">Name (required, ≥ 3 characters):</label>
+          <input id="name" name="name" type="text">
+        </div>
+        <div class="field">
+          <label for="birthyear">Birth year (integer, &gt;1900 and &lt;current year):</label>
+          <input id="birthyear" name="birthyear" type="number">
+        </div>
+        <fieldset class="field">
+          <legend>Residence</legend>
+          <label><input id="inUS" type="checkbox"> Do you live in the United States?</label>
+        </fieldset>
+        <div class="field" id="zip-wrap" style="display:none;">
+          <label for="zip">ZIP code (5 digits):</label>
+          <input id="zip" name="zip" type="text" maxlength="5">
+        </div>
+        <div class="field">
+          <label for="password">Password (≥8 characters):</label>
+          <input id="password" name="password" type="password">
+        </div>
+        <fieldset class="field">
+          <legend>Pizza preference</legend>
+          <label><input type="radio" name="pizza" value="pineapple"> With pineapple</label>
+          <label><input type="radio" name="pizza" value="no-pineapple"> No pineapple</label>
+          <label><input type="radio" name="pizza" value="no-pizza"> I don't like pizza</label>
+        </fieldset>
+        <div class="actions">
+          <button type="submit">Submit</button>
+          <button type="reset" id="reset">Reset</button>
+        </div>
+      </form>
+      <p id="ok" class="ok"></p>
+    </section>
+  </main>
+  <footer><p>INFO 6150 · Assignment 5 · Jing Cao</p></footer>
+  <script src="app.js"></script>
+</body>
+</html>
