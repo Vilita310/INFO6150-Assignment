@@ -1,9 +1,7 @@
-# INFO 6150 — Assignment 5 (Minimal)
-
-Minimal form validation example.
+# INFO 6150 — Assignment 5
 
 ## What it uses
-- Semantic HTML, simple CSS, and basic JavaScript only.
+- Semantic HTML, CSS and JavaScript.
 
 ## Validation
 - Name ≥3 chars, Birth year 1900<y<current year.
@@ -16,4 +14,5 @@ Open `index.html` in a browser.
 
 ## Academic integrity statement
 I used **AI and Google to look up or clarify specific concepts I did not understand** (for example, regex syntax or addEventListener usage).
+
 I use **AI to help me analyze the parts of the homework requirements that I don’t understand**, and **organize the knowledge points of the materials** given by our professor.
