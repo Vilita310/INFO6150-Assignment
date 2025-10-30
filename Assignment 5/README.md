@@ -9,11 +9,13 @@ Improved version based on feedback.
 ## What it uses
 - Semantic HTML, CSS and JavaScript.
 
-## Validation
-- Name ≥3 chars, Birth year 1900<y<current year.
-- ZIP only if "in US" checked, 5 digits.
-- Password ≥8 chars.
-- Pizza: one of three options.
+## Validation Rules
+- Name ≥ 3 characters  
+- Birth year >1900 and < current year  
+- ZIP required if "Live in US" checked (5 digits)  
+- Password ≥ 8 characters  
+- Must select one pizza option  
+- Displays “Accepted” if valid  
 
 ## Run
 Open `index.html` in a browser.
