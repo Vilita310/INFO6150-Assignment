@@ -1,52 +1,63 @@
-const YEAR_NOW = new Date().getFullYear();
-const form = document.getElementById('signup-form');
-const errorsEl = document.getElementById('errors');
-const okEl = document.getElementById('ok');
-const nameEl = document.getElementById('name');
-const yearEl = document.getElementById('birthyear');
-const inUS = document.getElementById('inUS');
-const zipWrap = document.getElementById('zip-wrap');
-const zipEl = document.getElementById('zip');
-const passEl = document.getElementById('password');
+// Improved validation script
+const currentYear = new Date().getFullYear();
 
-inUS.addEventListener('change', () => {
-  zipWrap.style.display = inUS.checked ? 'block' : 'none';
-  if (!inUS.checked) zipEl.value = '';
+const form = document.getElementById('signup-form');
+const errorsList = document.getElementById('errors');
+const successMsg = document.getElementById('ok');
+const nameInput = document.getElementById('name');
+const birthYearInput = document.getElementById('birthyear');
+const inUSCheckbox = document.getElementById('inUS');
+const zipWrapper = document.getElementById('zip-wrap');
+const zipInput = document.getElementById('zip');
+const passwordInput = document.getElementById('password');
+
+inUSCheckbox.addEventListener('change', () => {
+  zipWrapper.style.display = inUSCheckbox.checked ? 'block' : 'none';
+  if (!inUSCheckbox.checked) zipInput.value = '';
 });
 
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  errorsEl.innerHTML = '';
-  okEl.textContent = '';
-  const errs = [];
-  const name = (nameEl.value || '').trim();
-  if (name.length < 3) errs.push('Name: required and must be at least 3 characters.');
-  const ys = (yearEl.value || '').trim();
-  if (!ys) errs.push('Birth year: required.');
-  else if (!/^\d+$/.test(ys)) errs.push('Birth year: must be integer.');
-  else {
-    const y = +ys;
-    if (!(y > 1900 && y < YEAR_NOW)) errs.push('Birth year: must be >1900 and <' + YEAR_NOW + '.');
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  errorsList.innerHTML = '';
+  successMsg.textContent = '';
+  const errors = [];
+
+  const nameValue = nameInput.value.trim();
+  if (nameValue.length < 3) errors.push('Name must be at least 3 characters.');
+
+  const birthYearStr = birthYearInput.value.trim();
+  if (!/^[0-9]+$/.test(birthYearStr)) {
+    errors.push('Birth year must be an integer.');
+  } else {
+    const birthYear = Number(birthYearStr);
+    if (birthYear <= 1900 || birthYear >= currentYear)
+      errors.push(`Birth year must be between 1900 and ${currentYear}.`);
   }
-  if (inUS.checked) {
-    const z = (zipEl.value || '').trim();
-    if (!z) errs.push('ZIP: required when living in US.');
-    else if (!/^\d{5}$/.test(z)) errs.push('ZIP: must be exactly 5 digits.');
+
+  if (inUSCheckbox.checked) {
+    const zipVal = zipInput.value.trim();
+    if (!/^[0-9]{5}$/.test(zipVal)) errors.push('ZIP must be 5 digits.');
   }
-  const p = (passEl.value || '');
-  if (p.length < 8) errs.push('Password: must be at least 8 characters.');
-  if (!form.querySelector('input[name=pizza]:checked')) errs.push('Pizza preference: choose one.');
-  if (errs.length)
-    errs.forEach(m => {
+
+  const passwordVal = passwordInput.value;
+  if (passwordVal.length < 8) errors.push('Password must be at least 8 characters.');
+
+  const pizzaChoice = form.querySelector('input[name="pizza"]:checked');
+  if (!pizzaChoice) errors.push('Please select a pizza preference.');
+
+  if (errors.length > 0) {
+    errors.forEach(e => {
       const li = document.createElement('li');
-      li.textContent = m;
-      errorsEl.appendChild(li);
+      li.textContent = e;
+      errorsList.appendChild(li);
     });
-  else okEl.textContent = 'Accepted';
+  } else {
+    successMsg.textContent = 'Accepted';
+  }
 });
 
 document.getElementById('reset').addEventListener('click', () => {
-  errorsEl.innerHTML = '';
-  okEl.textContent = '';
-  setTimeout(() => { if (!inUS.checked) zipWrap.style.display = 'none'; }, 0);
+  errorsList.innerHTML = '';
+  successMsg.textContent = '';
+  if (!inUSCheckbox.checked) zipWrapper.style.display = 'none';
 });
