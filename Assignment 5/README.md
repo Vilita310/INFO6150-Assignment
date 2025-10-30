@@ -1,5 +1,11 @@
 # INFO 6150 — Assignment 5
+Improved version based on feedback.
 
+## Improvements
+- Added engaging CSS (orange theme, shadows, gradients).
+- Fixed input overflow using `box-sizing: border-box`.
+- Improved variable naming and code readability.
+  
 ## What it uses
 - Semantic HTML, CSS and JavaScript.
 
