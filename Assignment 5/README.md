@@ -1,13 +1,10 @@
 # INFO 6150 — Assignment 5
-Improved version based on feedback.
+New version submitted after incorporating feedbacks.
 
-## Improvements
-- Added engaging CSS (orange theme, shadows, gradients).
-- Fixed input overflow using `box-sizing: border-box`.
-- Improved variable naming and code readability.
-  
-## What it uses
-- Semantic HTML, CSS and JavaScript.
+## New Fixes
+- Added left padding to error message bullets (`#errors { padding-left: 20px; }`)
+- Converted all single-line `if` statements into full `{}` blocks in JavaScript
+- Maintained consistent indentation and code formatting
 
 ## Validation Rules
 - Name ≥ 3 characters  
