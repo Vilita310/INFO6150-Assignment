@@ -88,9 +88,11 @@ button:hover {
   gap: 8px;
 }
 
+/* ✅ Added padding fix for bullet list */
 #errors {
   color: #b91c1c;
   margin: 8px 0 12px;
+  padding-left: 20px;
 }
 
 #errors:empty {
