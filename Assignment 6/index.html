@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Assignment 6 · API App (Ghibli Films)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1>Studio Ghibli Films</h1>
+      <p>Data from <a href="https://ghibliapi.vercel.app" target="_blank" rel="noreferrer">ghibliapi</a></p>
+    </header>
+
+    <main>
+      <section class="card" aria-labelledby="search-title">
+        <h2 id="search-title">Search</h2>
+        <form id="search-form">
+          <div class="row">
+            <label for="q">Title contains</label>
+            <input id="q" name="q" type="text" placeholder="e.g., Totoro" />
+          </div>
+          <div class="row grid2">
+            <button type="submit">Search</button>
+            <button type="button" id="btn-list">List All (first 20)</button>
+          </div>
+        </form>
+      </section>
+
+      <section id="results" class="card" aria-live="polite">
+      </section>
+
+      <section id="details" class="card" aria-live="polite">
+      </section>
+    </main>
+
+    <footer>
+      <small>© 2025 · Jing's Assignment 6</small>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
