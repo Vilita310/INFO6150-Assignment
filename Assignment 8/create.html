@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Create Book</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Create a New Book</h1>
+    <p class="helper">POST JSON to My MockAPI. Basic validation included.</p>
+  </header>
+
+  <main id="page-create">
+    <form class="card" id="create-form" novalidate>
+      <label for="title">Title <span aria-hidden="true">*</span></label>
+      <input id="title" name="title" required />
+      <div class="helper">3–100 characters.</div>
+      <div class="error" id="err-title"></div>
+
+      <label for="author">Author <span aria-hidden="true">*</span></label>
+      <input id="author" name="author" required />
+      <div class="helper">2–60 characters.</div>
+      <div class="error" id="err-author"></div>
+
+      <label for="publisher">Publisher</label>
+      <input id="publisher" name="publisher" />
+      <div class="helper">Optional.</div>
+
+      <div class="grid-2">
+        <div>
+          <label for="year">Year</label>
+          <input id="year" name="year" type="number" min="1500" max="2100" />
+          <div class="helper">1500–2100 (optional).</div>
+          <div class="error" id="err-year"></div>
+        </div>
+        <div>
+          <label for="pages">Pages</label>
+          <input id="pages" name="pages" type="number" min="1" max="5000" />
+          <div class="helper">1–5000 (optional).</div>
+          <div class="error" id="err-pages"></div>
+        </div>
+      </div>
+
+      <label for="topics">Topics</label>
+      <input id="topics" name="topics" placeholder="e.g., programming, craftsmanship" />
+      <div class="helper">Comma-separated (optional).</div>
+
+      <div style="margin-top:16px;">
+        <button type="submit">Submit</button>
+        <a class="button secondary" href="./index.html">Cancel</a>
+      </div>
+
+      <p id="create-status" class="helper" style="margin-top:10px;"></p>
+    </form>
+  </main>
+
+  <footer>© 2025 · Jing's Assignment 8</footer>
+  <script src="./app.js" defer></script>
+</body>
+</html>
