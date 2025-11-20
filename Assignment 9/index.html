@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Books · List</title>
+  <link rel="stylesheet" href="./styles.css"/>
+</head>
+<body>
+<header>
+  <h1>Books</h1>
+  <p class="helper">GET many items from MockAPI. Use search by title or list all.</p>
+</header>
+
+<main id="page-list">
+  <section class="card">
+    <label for="q">Title contains</label>
+    <input id="q" type="text" placeholder="e.g., Dune" />
+
+    <div class="actions">
+      <button id="btn-search" class="button">Search</button>
+      <button id="btn-toggle" class="button secondary">List All</button>
+      <a class="button" href="./create.html">+ Create</a>
+    </div>
+
+    <p id="status">Use “List All” or search by title.</p>
+    <ul id="list" class="list"></ul>
+  </section>
+</main>
+
+
+<footer>© 2025 · Jing's Assignment 9</footer>
+<script src="./app.js"></script>
+</body>
+</html>

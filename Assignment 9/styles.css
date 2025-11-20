@@ -1,0 +1,106 @@
+/* ========== Global ========== */
+* { box-sizing: border-box; }
+
+:root {
+  --maxw: 720px;
+  --gap: 16px;
+  --brand: #2b4eff;
+}
+
+body {
+  font-family: system-ui, -apple-system, Arial, sans-serif;
+  margin: 0;
+  color: #222;
+  background: #fafbff;
+}
+
+header, main, footer {
+  padding: var(--gap);
+  max-width: var(--maxw);
+  margin: 0 auto;
+}
+
+header h1 {
+  margin: 0 0 8px;
+  color: var(--brand);
+  font-size: 28px;
+}
+
+.helper { color: #666; font-size: 14px; }
+.error  { color: #b91c1c; font-size: 14px; margin-top: 4px; }
+.success{ color: #166534; }
+
+/* ========== Card / List ========== */
+.card {
+  background: #fff;
+  border: 1px solid #e8eaf3;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+}
+
+.list li {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.list li:last-child { border-bottom: none; }
+
+/* ========== Buttons / Inputs ========== */
+a.button, button {
+  display: inline-block;
+  padding: 10px 14px;
+  background: var(--brand);
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+a.button.secondary, button.secondary { background: #6b7280; }
+button.danger { background: #b91c1c; }
+
+a.button:focus, button:focus {
+  outline: 2px solid #aac2ff;
+  outline-offset: 2px;
+}
+
+label { display: block; font-weight: 600; margin: 12px 0 6px; }
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cfd5e3;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* ========== Layout helpers ========== */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap);
+  align-items: end;
+}
+
+.actions { display: flex; gap: 8px; }
+
+.inline-actions { display: inline-flex; gap: 8px; margin-left: 8px; }
+
+@media (max-width: 560px) {
+  .grid-2 { grid-template-columns: 1fr; }
+}
+
+/* ========== Footer ========== */
+footer { color: #6b7280; font-size: 13px; }

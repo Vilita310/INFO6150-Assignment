@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Edit · Book</title>
+  <link rel="stylesheet" href="./styles.css"/>
+</head>
+<body>
+<header>
+  <h1>Edit Book</h1>
+  <p class="helper">GET by id, then PUT to MockAPI.</p>
+</header>
+
+<main id="page-edit">
+  <form id="edit-form" class="card">
+    <!-- Hidden id for reference -->
+    <input id="edit-id" type="hidden"/>
+
+    <label for="edit-title">Title *</label>
+    <input id="edit-title" required/>
+    <div id="err-edit-title" class="error"></div>
+
+    <label for="edit-author">Author *</label>
+    <input id="edit-author" required/>
+    <div id="err-edit-author" class="error"></div>
+
+    <label for="edit-publisher">Publisher</label>
+    <input id="edit-publisher"/>
+
+    <div class="grid-2">
+      <div>
+        <label for="edit-year">Year</label>
+        <input id="edit-year" type="number" min="1500" max="2100"/>
+        <div id="err-edit-year" class="error"></div>
+      </div>
+      <div>
+        <label for="edit-pages">Pages</label>
+        <input id="edit-pages" type="number" min="1" max="5000"/>
+        <div id="err-edit-pages" class="error"></div>
+      </div>
+    </div>
+
+    <label for="edit-topics">Topics</label>
+    <input id="edit-topics"/>
+
+    <p id="edit-status" class="helper">Loading…</p>
+    <div class="actions">
+      <button type="submit">Save</button>
+      <a class="button secondary" href="./index.html">Cancel</a>
+    </div>
+  </form>
+</main>
+
+<footer>© 2025 · Jing's Assignment 9</footer>
+<script src="./app.js"></script>
+</body>
+</html>
