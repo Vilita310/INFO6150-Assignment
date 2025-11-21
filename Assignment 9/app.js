@@ -61,12 +61,20 @@ function readFormAndValidate(ids, prefix) {
   ok = showFieldError(`${prefix}title`,  title.length >= 3, 'Title: at least 3 characters.') && ok;
   ok = showFieldError(`${prefix}author`, author.length >= 2, 'Author: at least 2 characters.') && ok;
 
+
+  // Changed after Professor's feedback
   if (year !== null) {
-    const validYear = Number.isFinite(year) && year >= 1500 && year <= 2100;
-    ok = showFieldError(`${prefix}year`, validYear, 'Year: 1500–2100.') && ok;
+    const currentYear = new Date().getFullYear(); // e.g., 2025
+    const validYear = Number.isFinite(year) && year >= 1500 && year <= currentYear;
+    ok = showFieldError(
+     `${prefix}year`,
+      validYear,
+      `Year: 1500–${currentYear}.`
+    ) && ok;
   } else {
     showFieldError(`${prefix}year`, true, '');
   }
+
 
   if (pages !== null) {
     const validPages = Number.isFinite(pages) && pages >= 1 && pages <= 5000;
@@ -101,21 +109,25 @@ async function initListPage() {
       setHTML(statusEl, 'No results.');
       return;
     }
+  
+  // Changed after Professor's feedback
+  const html = items.map(function (b) {
+    const id    = escapeHtml(`${b.id || ''}`);
+    const title = escapeHtml(b.title || '');
+    const year  = (b.year != null)
+      ? `<span class="year"> · ${escapeHtml(`${b.year}`)}</span>`
+      :  '';
 
-    const html = items.map(function (b) {
-      const id    = escapeHtml(`${b.id || ''}`);
-      const title = escapeHtml(b.title || '');
-      const year  = b.year != null ? ` · ${escapeHtml(`${b.year}`)}` : '';
-
-      return `
+    return `
         <li>
-          <strong><a href="./detail.html?id=${id}">${title}</a></strong>${year}
-          <span class="inline-actions">
-            <a class="button secondary" href="./edit.html?id=${id}">Edit</a>
-            <button class="danger btn-delete" data-id="${id}">Delete</button>
-          </span>
-        </li>`;
-    }).join('');
+        <a class="title" href="./detail.html?id=${id}">${title}</a>${year}
+        <span class="inline-actions">
+          <a class="button secondary" href="./edit.html?id=${id}">Edit</a>
+          <button class="danger btn-delete" data-id="${id}">Delete</button>
+        </span>
+      </li>`;
+  }).join('');
+
 
     setHTML(listEl, html);
     setHTML(statusEl, `Loaded ${items.length} item(s).`);

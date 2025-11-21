@@ -104,3 +104,45 @@ input, textarea {
 
 /* ========== Footer ========== */
 footer { color: #6b7280; font-size: 13px; }
+
+
+
+/* Some Changes after Professor's feedback */
+.list li {
+  display: grid;
+  grid-template-columns: 1fr auto auto; 
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+
+
+.titleline {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;                 
+  min-width: 0;             
+}
+
+.titleline .title {
+  display: inline;          
+  font-weight: 600;
+  color: inherit;
+  text-decoration: none;
+  overflow-wrap: anywhere;  
+}
+
+.titleline .year {
+  color: #555;
+  white-space: nowrap;      
+}
+
+
+.actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 12px;         
+}
+
