@@ -64,16 +64,20 @@ function readFormAndValidate(ids, prefix) {
 
   // Changed after Professor's feedback
   if (year !== null) {
-    const currentYear = new Date().getFullYear(); // e.g., 2025
+    const currentYear = new Date().getFullYear();
     const validYear = Number.isFinite(year) && year >= 1500 && year <= currentYear;
+  
     ok = showFieldError(
-     `${prefix}year`,
+      `${prefix}year`,
       validYear,
       `Year: 1500–${currentYear}.`
-    ) && ok;
+   ) && ok;
+
   } else {
-    showFieldError(`${prefix}year`, true, '');
+   showFieldError(`${prefix}year`, true, '');
   }
+
+
 
 
   if (pages !== null) {
